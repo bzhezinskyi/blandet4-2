@@ -1,3 +1,4 @@
+import Modal from 'components/Modal';
 import { useFetchEvent } from 'hooks/useFetchEvent';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -8,14 +9,16 @@ const EventSubPage = () => {
   return (
     <>
       {event && (
-        <div className="card">
-          <img
-            src={event.images[0].url}
-            alt={event.name}
-            className="card-img-top"
-          />
-          <div className="card-body">
-            <h4 className="card-title">{event.name}</h4>{' '}
+        <Modal
+          header={<h4 className="card-title">{event.name}</h4>}
+          body={
+            <img
+              src={event.images[0].url}
+              alt={event.name}
+              className="card-img-top"
+            />
+          }
+          footer={
             <Link
               to="details"
               state={location.state}
@@ -23,8 +26,8 @@ const EventSubPage = () => {
             >
               More info
             </Link>
-          </div>
-        </div>
+          }
+        ></Modal>
       )}
     </>
   );

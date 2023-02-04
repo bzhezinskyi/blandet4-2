@@ -32,10 +32,20 @@ const EventDetailsPage = () => {
             <p className="col fs-3">
               <span className="fw-bolder">Genre: </span>
               {event.classifications[0].genre.name}
-            </p>{' '}
+            </p>
             <p className="col fs-3">
               <span className="fw-bolder">Subgenre: </span>
               {event.classifications[0].subGenre.name}
+            </p>
+          </div>
+          <div className="row mt-4 text-center">
+            <p className="col fs-3">
+              <span className="fw-bolder">Date: </span>
+              {event.dates.start.localDate}
+            </p>
+            <p className="col fs-3">
+              <span className="fw-bolder">Time: </span>
+              {event.dates.start.localTime}
             </p>
           </div>
         </div>
